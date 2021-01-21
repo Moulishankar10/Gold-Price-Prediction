@@ -48,3 +48,16 @@ scaler_y = MinMaxScaler()
 xtrain_scaled = scaler_x.fit_transform(x_train)
 ytrain_scaled = scaler_y.fit_transform(y_train)
 xval_scaled = scaler_x.fit_transform(x_val)
+
+# DESIGNING THE NEURAL NETWORK
+model = Sequential()
+model.add(Dense(2, input_dim = 1, activation = 'relu', kernel_initializer='normal'))
+model.add(Dense(120, activation = 'relu'))
+model.add(Dense(120, activation = 'relu'))
+model.add(Dense(120, activation = 'relu'))
+model.add(Dense(1, activation = 'linear'))
+
+# TRAINING THE DATA
+model.compile(loss = 'mse', optimizer = 'adam', metrics = ['mse', 'mae', 'accuracy'])
+history = model.fit(xtrain_scaled, ytrain_scaled, epochs = 150, batch_size = 40, validation_split = 0.1, verbose = 1)
+print("\n\n ----- Model is trained successfully ! ----- \n\n")
