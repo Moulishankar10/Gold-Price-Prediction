@@ -40,3 +40,16 @@ y_scaled = scaler_y.fit_transform(y)
 
 # LOADING THE TRAINED MODEL
 model = load_model("model/model",custom_objects=None,compile=True)
+
+# INPUT DATA
+print("\nEnter the following details as what you want to predict!")
+input_date = input("\nEnter the Date (DD-MM-YYYY) : ")
+
+# PREPROCESSING INPUT DATA
+x_str = date(int(input_date[-4:]),int(input_date[3:5]),int(input_date[:2]))
+x_pred = (x_str - initial).days
+x_pred = np.array(x_pred)
+x_pred = np.reshape(x_pred, (-1,1))
+
+# SCALING INPUT DATA
+xpred_scaled = scaler_x.transform(x_pred)
