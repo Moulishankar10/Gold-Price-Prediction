@@ -1,6 +1,6 @@
 # Gold-Price-Prediction
 
-An ML model which is developed in TensorFlow, predicts the gold price on a time period given by user.
+An ML model, developed in TensorFlow which predicts the gold price on a time period given by user.
 
 ## Developed by
 
