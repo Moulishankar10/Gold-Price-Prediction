@@ -53,3 +53,10 @@ x_pred = np.reshape(x_pred, (-1,1))
 
 # SCALING INPUT DATA
 xpred_scaled = scaler_x.transform(x_pred)
+
+# PREDICTING THE RESULTANT VALUE
+ypred_scaled = model.predict(xpred_scaled)
+y_pred = scaler_y.inverse_transform(ypred_scaled)
+
+# DISPLAYING THE RESULTS
+print(f"\n\n The Predicted Gold Price on {input_date} ---- {round(float(y_pred),1)} USD/oz \n\n")
