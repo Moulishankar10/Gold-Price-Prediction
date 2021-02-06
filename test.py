@@ -61,4 +61,4 @@ ypred_scaled = model.predict(xpred_scaled)
 y_pred = scaler_y.inverse_transform(ypred_scaled)
 
 # DISPLAYING THE RESULTS
-print(f"\n\n As per the prediction, the Gold Price on {input_date} might be -> ${round(float(y_pred),1)} per oz \n\n")
+print(f"\n\n As per the prediction, the Gold Price on {month[int(input_date[3:5])-1]} {int(input_date[:2])},{int(input_date[-4:])} might be -> ${round(float(y_pred),1)} per oz \n\n")
