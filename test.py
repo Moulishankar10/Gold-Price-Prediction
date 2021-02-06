@@ -42,8 +42,8 @@ y_scaled = scaler_y.fit_transform(y)
 model = load_model("model/model",custom_objects=None,compile=True)
 
 # INPUT DATA
-print("\nEnter the following details as what you want to predict!")
-input_date = input("\nEnter the Date (DD-MM-YYYY) : ")
+print("\nEnter the Time Period on when you want to explore the predicted Gold Rate !")
+input_date = input("\nTime Period (DD-MM-YYYY) : ")
 
 # PREPROCESSING INPUT DATA
 x_str = date(int(input_date[-4:]),int(input_date[3:5]),int(input_date[:2]))
