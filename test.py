@@ -45,6 +45,8 @@ model = load_model("model/model",custom_objects=None,compile=True)
 print("\nEnter the Time Period on when you want to explore the predicted Gold Rate !")
 input_date = input("\nTime Period (DD-MM-YYYY) : ")
 
+month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
 # PREPROCESSING INPUT DATA
 x_str = date(int(input_date[-4:]),int(input_date[3:5]),int(input_date[:2]))
 x_pred = (x_str - initial).days
