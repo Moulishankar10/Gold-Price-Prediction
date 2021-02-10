@@ -49,7 +49,7 @@ y_est = scaler_y.inverse_transform(y_est)
 # VISUALISING THE MODEL PERFORMANCE
 plt.plot(x,y, color = 'blue')
 plt.plot(x,y_est, color = 'red')
-plt.title('Gold Price Prediction')
+plt.title('Gold Price Prediction - MODEL PERFORMANCE')
 plt.xlabel('Date')
 plt.ylabel('Price')
 plt.legend(['Actual Data', 'Predicted Data'], loc='upper left')
